@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="tp-2-flutter---rapport">TP 2 Flutter - Rapport</h1>
+<h2 id="kemmoun-ramzy--abadli-baddredine-m2-iv">Kemmoun Ramzy / Abadli Baddredine M2 IV</h2>
+<h2 id="exercice-1">Exercice 1</h2>
+<p>Nous avons d'abord importé le package material.dart pour utiliser les composants Flutter. Ensuite, nous avons créé un répertoire nommé images dans le projet et ajouté des images dedans. Pour rendre ces images disponibles, nous les avons déclarées dans le fichier pubspec.yaml sous assets. Enfin, dans notre code Flutter, nous avons créé un widget Stateful et utilisé Image.asset('images/It.png') pour afficher l'image directement.</p>
+<p>nous avons créé aussi une fonction rotate qui gère la rotation d'une image en incrémentant un angle à chaque clic sur un bouton. L'angle est mis à jour dans la méthode setState, permettant à l'interface de se rafraîchir. Un FloatingActionButton a été ajouté avec une étiquette &quot;Rotate&quot; qui appelle cette fonction lorsqu'il est pressé. L'image est affichée à l'aide d'un widget Transform.rotate, qui applique la rotation basée sur l'angle en radians, permettant ainsi à l'utilisateur de faire pivoter l'image en continu.</p>
+<p><a href="https://cdn.discordapp.com/attachments/951922266369851422/1299378651346899025/image.png?ex=671cfc2b&amp;is=671baaab&amp;hm=c58799494ff4cb38a75323c85304642c928a777af5d2de07699739b9e0a9b230&amp;">Image Rotation</a></p>
+<h2 id="exercice-2">Exercice 2</h2>
+<p>Dans cet exercice, nous avons implémenté la navigation, pour cela nous avons créé une seconde fenêtre en ajoutant un widget StatelessWidget pour la nouvelle page, et nous avons ajouté une instruction Navigator.push pour permettre de passer de la première à la deuxième fenêtre. et un button dans la deuxième fenêtre pour retourner à la première page.</p>
+<p><a href="https://cdn.discordapp.com/attachments/951922266369851422/1299378710767599646/image.png?ex=671cfc39&amp;is=671baab9&amp;hm=9d62930a5bb216be1da9124e19276799c748680da14dc3a504a517c703940d28&amp;">Navigation</a></p>
+<h2 id="exercice-3">Exercice 3</h2>
+<p>Dans le troisième exercice, nous avons mis en place une galerie d'images en utilisant le package image_picker, que j'ai installé pour permettre à l'utilisateur de sélectionner des images à partir de la galerie de son appareil. J'ai ensuite utilisé un GridView.count pour afficher ces images sous forme de grille. Chaque image est cliquable et, lorsque l'on appuie dessus, elle redirige vers un écran de détails de l'image, permettant d'afficher l'image sélectionnée en plus grande taille et avec plus d'informations.</p>
+<p>Dans l'utilisation de la bibliothèque image_picker, nous utilisons les mots-clés async et Future pour gérer les opérations asynchrones. Lorsqu'un utilisateur sélectionne une image, une fonction marquée async permet d'attendre le résultat du Future retourné par le image_picker. Cela garantit que notre application reste réactive pendant que l'image est chargée, sans bloquer l'interface utilisateur. Cette approche rend le processus de sélection d'image plus fluide et agréable pour l'utilisateur.</p>
+<p><a href="https://cdn.discordapp.com/attachments/951922266369851422/1299378795228172460/image.png?ex=671cfc4e&amp;is=671baace&amp;hm=21c1ede1ceb558fba60a373563c2b47e164b3132e64e34c366d239da7bece4e7&amp;">Gallery</a></p>
+<p><a href="https://cdn.discordapp.com/attachments/951922266369851422/1299378879512842300/image.png?ex=671cfc62&amp;is=671baae2&amp;hm=f828ff3318039a0b6145c86b436205de0b113f7cbdeb45b51ed135f783f61ac5&amp;">Pick from gallery</a></p>
+<p><a href="https://cdn.discordapp.com/attachments/951922266369851422/1299378927164199002/image.png?ex=671cfc6d&amp;is=671baaed&amp;hm=df4a66d937091a29555b826ccb200e1984b92d1590847631aed87aec2d99d449&amp;">Images Grid</a></p>
+<p><a href="https://cdn.discordapp.com/attachments/951922266369851422/1299378957992329348/image.png?ex=671cfc74&amp;is=671baaf4&amp;hm=463385e0409d883dfc552a4a98257b9a7ecf81e7200d7cfc3642b04e13db344c&amp;">Image Details</a></p>
+<p>En conclusion, Flutter facilite grandement le développement d'applications mobiles grâce à sa large gamme de packages disponibles. Ces outils permettent d'intégrer rapidement des fonctionnalités complexes, comme la sélection d'images avec image_picker, tout en offrant une interface utilisateur intuitive. L'utilisation de GridView pour afficher des galeries d'images montre à quel point Flutter rend la création d'interfaces visuellement attrayantes et interactives simple et efficace. Ainsi, les développeurs peuvent se concentrer sur l'expérience utilisateur sans se soucier des détails techniques sous-jacents.</p>
+
+</body>
+</html>
