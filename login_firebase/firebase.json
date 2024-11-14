@@ -1,0 +1,1 @@
+{"flutter":{"platforms":{"android":{"default":{"projectId":"auth-tp-sem","appId":"1:69318316742:android:6d336c2e2d85281cc4fdc7","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"auth-tp-sem","configurations":{"android":"1:69318316742:android:6d336c2e2d85281cc4fdc7","ios":"1:69318316742:ios:94b52b4b6082bb9cc4fdc7"}}}}}}

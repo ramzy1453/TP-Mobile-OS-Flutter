@@ -12,7 +12,7 @@ class Gallery extends StatefulWidget {
 }
 
 class _GalleryState extends State<Gallery> {
-  final List<File?> _images = [];
+  final List<String> _images = [];
 
   Future _pickImageFromGallery() async {
     final returnedImage =
@@ -22,8 +22,14 @@ class _GalleryState extends State<Gallery> {
 
     setState(() {
       if (returnedImage != null) {
-        _images.add(File(returnedImage.path));
+        _images.add(returnedImage.path);
       }
+    });
+  }
+
+  void deleteImage(imagePath) {
+    setState(() {
+      _images.remove(imagePath);
     });
   }
 
@@ -60,13 +66,14 @@ class _GalleryState extends State<Gallery> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) =>
-                                  ImageDetails(image: _images[index]),
+                              builder: (context) => ImageDetails(
+                                  imagePath: _images[index],
+                                  deleteImage: deleteImage),
                             ),
                           );
                         },
                         child: Image.file(
-                          _images[index]!,
+                          File(_images[index]),
                           width: 150,
                         ));
                   }),

@@ -3,18 +3,20 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 
 class ImageDetails extends StatelessWidget {
-  const ImageDetails({super.key, required this.image});
+  const ImageDetails(
+      {super.key, required this.imagePath, required this.deleteImage});
 
-  final File? image;
+  final String imagePath;
+  final Function deleteImage;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
-        title: const Text(
-          'Image Details',
-          style: TextStyle(color: Colors.white),
+        title: Text(
+          imagePath,
+          style: const TextStyle(color: Colors.white),
         ),
       ),
       body: Container(
@@ -24,11 +26,17 @@ class ImageDetails extends StatelessWidget {
             width: 2,
           ),
         ),
-        child: Center(
-          child: Image.file(
-            image!,
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Image.file(
+            File(imagePath),
           ),
-        ),
+          ElevatedButton(
+              onPressed: () {
+                deleteImage(imagePath);
+                Navigator.pop(context);
+              },
+              child: const Text("Delete Image"))
+        ]),
       ),
     );
   }

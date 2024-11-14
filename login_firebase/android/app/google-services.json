@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "69318316742",
+    "project_id": "auth-tp-sem",
+    "storage_bucket": "auth-tp-sem.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69318316742:android:6d336c2e2d85281cc4fdc7",
+        "android_client_info": {
+          "package_name": "com.example.login_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0ahQd5YbH127ksve3Xk5m5bUq3908mdI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

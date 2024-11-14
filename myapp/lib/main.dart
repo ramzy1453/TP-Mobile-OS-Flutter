@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/screens/baridi.dart';
 import 'package:myapp/screens/gallery.dart';
 import 'package:myapp/screens/second.dart';
 
@@ -26,7 +25,6 @@ class MyApp extends StatelessWidget {
               title: "Sscreen",
             ),
         'gallery': (context) => const Gallery(),
-        "baridi": (context) => const Baridi(),
       },
     );
   }
