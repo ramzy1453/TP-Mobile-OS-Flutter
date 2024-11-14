@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:login_firebase/services/auth_services.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
@@ -17,7 +17,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: const Text('Signup'),
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white,
       ),
@@ -27,7 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
           padding: const EdgeInsets.all(16),
           child: Column(children: <Widget>[
             const Text(
-              "Login",
+              "Signup",
               style: TextStyle(fontSize: 24),
             ),
             const SizedBox(
@@ -73,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 if (_formKey.currentState!.validate()) {
                   debugPrint(
                       "Email: ${emailController.text}, Password: ${passwordController.text}");
-                  await AuthService().login(
+                  await AuthService().signup(
                       email: emailController.text,
                       password: passwordController.text);
                   if (context.mounted) {
@@ -94,10 +94,10 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushReplacementNamed(context, '/signup');
+                Navigator.pushNamed(context, '/login');
               },
               child: const Text(
-                "Don't have an account? Sign up",
+                "Already have an account? Login",
                 style: TextStyle(color: Colors.blue),
               ),
             )
