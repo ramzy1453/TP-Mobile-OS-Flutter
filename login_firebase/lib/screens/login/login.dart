@@ -68,16 +68,12 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             ElevatedButton(
               onPressed: () async {
-                debugPrint(
-                    "Email: ${emailController.text}, Password: ${passwordController.text}");
                 if (_formKey.currentState!.validate()) {
-                  debugPrint(
-                      "Email: ${emailController.text}, Password: ${passwordController.text}");
                   await AuthService().login(
                       email: emailController.text,
                       password: passwordController.text);
                   if (context.mounted) {
-                    Navigator.pushReplacementNamed(context, '/home');
+                    Navigator.pushNamed(context, '/home');
                   }
                 }
               },

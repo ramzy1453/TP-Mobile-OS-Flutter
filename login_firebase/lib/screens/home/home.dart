@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:login_firebase/services/auth_services.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -38,7 +39,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: const Text('Login'),
               )
-            ]
+            ],
+            ElevatedButton(
+                onPressed: () async {
+                  await AuthService().logout();
+                  if(context.mounted) {
+                    Navigator.pushReplacementNamed(context, '/login');
+                  }
+                },
+                child: const Text("Logout"))
           ],
         ),
       ),

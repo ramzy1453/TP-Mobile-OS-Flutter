@@ -46,4 +46,8 @@ class AuthService {
           fontSize: 16.0);
     }
   }
+
+  Future<void> logout() async {
+    FirebaseAuth.instance.signOut();
+  }
 }

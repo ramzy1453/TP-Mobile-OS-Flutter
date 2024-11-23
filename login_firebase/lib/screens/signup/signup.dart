@@ -77,7 +77,7 @@ class _SignupScreenState extends State<SignupScreen> {
                       email: emailController.text,
                       password: passwordController.text);
                   if (context.mounted) {
-                    Navigator.pushReplacementNamed(context, '/home');
+                    Navigator.pushNamed(context, '/home');
                   }
                 }
               },
@@ -94,7 +94,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, '/login');
+                Navigator.pushReplacementNamed(context, '/login');
               },
               child: const Text(
                 "Already have an account? Login",
