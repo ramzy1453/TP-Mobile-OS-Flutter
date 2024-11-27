@@ -35,6 +35,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   image_picker: ^1.1.2
+  # just_audio: ^0.9.42
+  # just_audio_background: ^0.9.42
+  # flutter_local_notifications: ^0.9.42
 
 dev_dependencies:
   flutter_test:
@@ -58,11 +61,6 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  assets:
-    - images/IT.png
-    - images/ben10.jpg
-    - images/earth.jpg
-    - images/aid.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
